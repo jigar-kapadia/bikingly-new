@@ -2663,3 +2663,7 @@ a.readmore {
 section {
   overflow: hidden;
 }
+
+.service-icon p{
+  font-size: 16px !important;
+}
