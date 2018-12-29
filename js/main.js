@@ -119,7 +119,7 @@ jQuery(document).ready(function($) {
 		lineWidth : 10,
 		lineCap : 'square',
 		lineWidth : 18,
-		barColor : '#3498db',
+		barColor : '#EC8D49',//'#3498db',
 		trackColor : '#f9f9f9',
 		scaleColor : false,
 		onStep: function(from, to, percent) {
