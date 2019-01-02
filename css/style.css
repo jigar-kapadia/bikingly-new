@@ -749,6 +749,12 @@ body.nobg .section1 {
   color: #ffffff;
 }
 
+#dvStore input[type="image"]{
+	width:140;
+	height:40;
+}
+
+
 .title-area {
   padding: 0;
   display: block;
