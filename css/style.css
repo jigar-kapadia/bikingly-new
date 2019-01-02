@@ -750,8 +750,8 @@ body.nobg .section1 {
 }
 
 #dvStore input[type="image"]{
-	width:140;
-	height:40;
+	    width: 140px;
+    height: 40px;
 }
 
 
