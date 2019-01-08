@@ -150,7 +150,33 @@ jQuery(document).ready(function($) {
     navigation: true,
     pagination: false,
   });
-
+		
+  $('.form-send button').click(function(){
+	$('.loading').show();
+	
+	var emailFormat = {
+		"from" : $('#contact-email').val(),
+		"subject" : $('#contact-subject').val(),
+		"message" : $('#contact-message').val()
+	};
+	
+	
+	$.ajax('https://bikingly-api.herokuapp.com/email', {
+    type: 'POST',  
+    data: emailFormat,  
+    success: function (data, status, xhr) {
+		$('.loading').hide();
+        console.log(data + '-------' + status);
+    },
+    error: function (jqXhr, textStatus, errorMessage) {
+	
+			$('.loading').hide();
+            console.log(errorMessage);
+    }
+	});
+	
+});
+	
   // Portfolio
   var $container = $('.portfolio'),
     $items = $container.find('.market-item'),
