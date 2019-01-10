@@ -162,13 +162,14 @@ jQuery(document).ready(function($) {
 	
 	
 	$.ajax('https://bikingly-api.herokuapp.com/email', {
-    type: 'POST',  
-    data: emailFormat,  
-    success: function (data, status, xhr) {
+    	type: 'POST',  
+	contentType: "application/json; charset=utf-8",
+    	data: emailFormat,  
+    	success: function (data, status, xhr) {
 		$('.loading').hide();
-        console.log(data + '-------' + status);
-    },
-    error: function (jqXhr, textStatus, errorMessage) {
+        	console.log(data + '-------' + status);
+    		},
+    	error: function (jqXhr, textStatus, errorMessage) {
 	
 			$('.loading').hide();
             console.log(errorMessage);
