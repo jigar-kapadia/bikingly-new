@@ -151,7 +151,8 @@ jQuery(document).ready(function($) {
     pagination: false,
   });
 		
-  $('.form-send button').click(function(){
+  $('.form-send button').click(function(e){
+	  e..preventDefault();
 	$('.loading').show();
 	
 	var emailFormat = {
