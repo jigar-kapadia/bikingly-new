@@ -152,7 +152,7 @@ jQuery(document).ready(function($) {
   });
 		
   $('.form-send button').click(function(e){
-	  e..preventDefault();
+	  e.preventDefault();
 	$('.loading').show();
 	
 	var emailFormat = {
