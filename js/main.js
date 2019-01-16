@@ -152,9 +152,9 @@ jQuery(document).ready(function($) {
   });
 		
   $('.form-send button').click(function(e){
-	var IsValid = true;
-	
 	e.preventDefault();
+	  var IsValid = true;
+	  $('.error-message').hide();
 	if($('#contact-email').val() == null || $('#contact-email').val() == '')
 	{
 		IsValid = false;
