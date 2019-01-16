@@ -152,30 +152,55 @@ jQuery(document).ready(function($) {
   });
 		
   $('.form-send button').click(function(e){
-	  //e.preventDefault();
-	$('.loading').show();
+	var IsValid = true;
 	
-	var emailFormat = {
-		"from" : $('#contact-email').val(),
-		"subject" : $('#contact-subject').val(),
-		"message" : $('#contact-message').val()
-	};
+	e.preventDefault();
+	if($('#contact-email').val() == null || $('#contact-email').val() == '')
+	{
+		IsValid = false;
+		
+	}
+	if($('#contact-subject').val() == null || $('#contact-subject').val() == '')
+	{
+		IsValid = false;
+	}
 	
+	if($('#contact-message').val() == null || $('#contact-message').val() == '')
+	{
+		IsValid = false;
+	}
+	//error-message
 	
-	$.ajax('https://bikingly-api.herokuapp.com/email', {
-    	type: 'POST',  
-	contentType: "application/json; charset=utf-8",
-    	data: emailFormat,  
-    	success: function (data, status, xhr) {
-		$('.loading').hide();
-        	console.log(data + '-------' + status);
-    		},
-    	error: function (jqXhr, textStatus, errorMessage) {
+	if(IsValid){
+		$('.loading').show();
 	
+		var emailFormat = {
+			"from" : $('#contact-email').val(),
+			"subject" : $('#contact-subject').val(),
+			"message" : $('#contact-message').val()
+		};
+		
+		
+		$.ajax('https://bikingly-api.herokuapp.com/email', {
+		type: 'POST',  
+		data: emailFormat,  
+		success: function (data, status, xhr) {
 			$('.loading').hide();
-            console.log(errorMessage);
-    }
-	});
+			console.log(data + '-------' + status);
+		},
+		error: function (jqXhr, textStatus, errorMessage) {
+		
+				$('.loading').hide();
+				console.log(errorMessage);
+		}
+		});
+	}
+	else
+	{
+	$('.error-message').show();
+		$('.error-message').text('Please Enter Valid Data')
+	}
+	
 	
 });
 	
