@@ -189,7 +189,10 @@ jQuery(document).ready(function($) {
 			console.log(data + '-------' + status);
 		},
 		error: function (jqXhr, textStatus, errorMessage) {
-		
+				$('#contact-email').val('');
+			$('#contact-subject').val('');
+			$('#contact-message').val('');
+			$('#contact-name').val('');
 				$('.loading').hide();
 				console.log(errorMessage);
 				$('.sent-message').show();
