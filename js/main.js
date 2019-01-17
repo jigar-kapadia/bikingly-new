@@ -192,6 +192,8 @@ jQuery(document).ready(function($) {
 		
 				$('.loading').hide();
 				console.log(errorMessage);
+				$('.sent-message').show();
+				
 		}
 		});
 	}
