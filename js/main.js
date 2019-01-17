@@ -155,6 +155,7 @@ jQuery(document).ready(function($) {
 	e.preventDefault();
 	  var IsValid = true;
 	  $('.error-message').hide();
+	  $('.sent-message').hide();
 	if($('#contact-email').val() == null || $('#contact-email').val() == '')
 	{
 		IsValid = false;
@@ -190,9 +191,9 @@ jQuery(document).ready(function($) {
 		},
 		error: function (jqXhr, textStatus, errorMessage) {
 				$('#contact-email').val('');
-			$('#contact-subject').val('');
-			$('#contact-message').val('');
-			$('#contact-name').val('');
+				$('#contact-subject').val('');
+				$('#contact-message').val('');
+				$('#contact-name').val('');
 				$('.loading').hide();
 				console.log(errorMessage);
 				$('.sent-message').show();
