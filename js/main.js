@@ -186,18 +186,17 @@ jQuery(document).ready(function($) {
 		type: 'POST',  
 		data: emailFormat,  
 		success: function (data, status, xhr) {
-			$('.loading').hide();
-			console.log(data + '-------' + status);
-		},
-		error: function (jqXhr, textStatus, errorMessage) {
-				$('#contact-email').val('');
+			$('#contact-email').val('');
 				$('#contact-subject').val('');
 				$('#contact-message').val('');
 				$('#contact-name').val('');
 				$('.loading').hide();
-				console.log(errorMessage);
+				
 				$('.sent-message').show();
 				
+		},
+		error: function (jqXhr, textStatus, errorMessage) {
+				$('.error-message').text('Some Error Occured');
 		}
 		});
 	}
